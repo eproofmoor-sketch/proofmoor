@@ -5,11 +5,7 @@
         <meta charset="utf-8">
         <title>Proofmoor - Empowering your brand’s</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Use relative paths for favicon and manifest files so they work on GitHub Pages. 
-             When deploying a project site on GitHub Pages the root URL corresponds to 
-             `/<repository-name>/`, so absolute paths like `/favicon-32x32.png` will break. 
-             These assets live in the `favicon_io` folder alongside index.html, so prefix 
-             their names with `./favicon_io/` to ensure the browser finds them correctly. -->
+        
         <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
@@ -34,7 +30,8 @@
         </script>
         <style>
           
-          #services .framer-srtpqd,
+          /* Only fade out the "The Key Benefits of Partnering" heading, leaving
+             the services pill fully visible. */
           #services [data-framer-name="The Key Benefits of Partnering"] {
             opacity: 0.001;
           }
@@ -6370,7 +6367,8 @@
             background: rgba(255, 255, 255, 0.1);
           }
           [data-framer-name="Power Your Business"]::after {
-            content: "Recover. Verify. Grow.";
+            /* Updated tagline to remove periods and add ampersand */
+            content: "Recover Verify & Grow";
             font-size: 64px;
             font-weight: 700;
             display: block;
@@ -12225,6 +12223,11 @@
           const interval = setInterval(() => {
             const servicesSection = document.getElementById('services');
             if (!servicesSection) return;
+            // Preserve the "Services" pill. Previously any <p> elements with the
+            // text "services" were removed or hidden, resulting in a small
+            // dot instead of the desired label. The following logic is
+            // intentionally disabled to keep the pill visible.
+            /*
             servicesSection.querySelectorAll('p').forEach(function(p) {
               const text = p.textContent ? p.textContent.trim().toLowerCase() : '';
               if (text === 'services') {
@@ -12236,6 +12239,7 @@
                 }
               }
             });
+            */
             const headingContainer = servicesSection.querySelector('[data-framer-name="The Key Benefits of Partnering"]');
             if (headingContainer) {
               const headingSpan = headingContainer.querySelector('span');
@@ -12580,7 +12584,8 @@
       
       <div id="contact-email">mail@proofmoor.com</div>
       
-      <div id="footer-headline">Recover. Verify. Grow.</div>
+      
+      <div id="footer-headline">Recover Verify &amp; Grow</div>
       
       
       <div id="footer-slogan" style="white-space: nowrap; font-size: 16px;">Empowering your brand's</div>
@@ -12706,6 +12711,12 @@
             if (servicesHeading) {
               const servicesSection = document.getElementById('services');
               if (servicesSection) {
+                // Do not remove or hide the "Services" label. The original code
+                // removed any <p> tags with the text "services" within the
+                // services section, which resulted in a barely visible dot. To
+                // preserve the "Services" pill as per design, the following
+                // lines are commented out.
+                /*
                 servicesSection.querySelectorAll('p').forEach(p => {
                   const text = (p.textContent || '').trim().toLowerCase();
                   if (text === 'services') {
@@ -12717,6 +12728,7 @@
                     }
                   }
                 });
+                */
                 const headingContainer = servicesSection.querySelector('[data-framer-name="The Key Benefits of Partnering"]');
                 if (headingContainer) {
                   const headingSpan = headingContainer.querySelector('span') || headingContainer;
