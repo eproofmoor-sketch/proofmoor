@@ -7,6 +7,12 @@
         <title>Proofmoor - Empowering your brand’s</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        <!-- Social preview meta tags -->
+        <meta property="og:image" content="/images/DP.jpg">
+        <meta name="twitter:image" content="/images/DP.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="image_src" href="/images/DP.jpg">
+
         <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
@@ -6369,7 +6375,14 @@
           [data-framer-name="Power Your Business"]::after {
             
             content: "Recover Verify & Grow";
-            font-size: 80px;
+            /*
+             * Enlarge the headline for "Recover Verify & Grow" so that it more closely
+             * fills the surrounding call‑out container. The original size of 80px
+             * looked undersized relative to the available space. Increasing this
+             * value helps the text stand out and match the larger design marked
+             * in the reference image provided by the user.
+             */
+            font-size: 150px;
             font-weight: 700;
             display: block;
             color: transparent;
@@ -12943,15 +12956,20 @@
               
               
               
+              // The original injected style used a relatively small responsive font size
+              // (clamp(32px, 8vw, 100px)), which made the footer headline appear
+              // undersized.  Increase the viewport percentage and maximum pixel
+              // value so that the "Recover Verify & Grow" message fills the
+              // larger call‑out area marked by the user.
               styleEl.textContent =
                 '[data-framer-name="Power Your Business"]::after { ' +
                 'content: "' + safeHeadline + '"; ' +
                 
                 
                 
-                
-                
-                'font-size: clamp(32px, 8vw, 100px); ' +
+
+
+                'font-size: clamp(32px, 12vw, 160px); ' +
                 'font-weight: 700; ' +
                 'display: block; ' +
                 'color: transparent; ' +
