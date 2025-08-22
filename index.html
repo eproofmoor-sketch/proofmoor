@@ -1,6 +1,4 @@
-
 <!doctype html>
-
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -6372,13 +6370,6 @@
           [data-framer-name="Power Your Business"]::after {
             
             content: "Recover Verify & Grow";
-            /*
-             * Enlarge the headline for "Recover Verify & Grow" so that it more closely
-             * fills the surrounding call‑out container. The original size of 80px
-             * looked undersized relative to the available space. Increasing this
-             * value helps the text stand out and match the larger design marked
-             * in the reference image provided by the user.
-             */
             font-size: 150px;
             font-weight: 700;
             display: block;
@@ -6632,6 +6623,19 @@
           transform: scale(1);
           box-shadow: 0 0 0 0 rgba(0, 93, 251, 0.6);
         }
+      }
+    </style>
+    
+    <style id="custom-footer-copyright">
+      .framer-lkmHr .framer-jz1m6w[data-framer-name="copyright 2025 @Proofmoor All Right Reserved"] {
+        
+        transform: translateY(-20px) !important;
+        margin-bottom: 40px !important;
+      }
+
+      
+      .framer-lkmHr {
+        padding-bottom: 140px !important;
       }
     </style>
     </head>
@@ -9708,7 +9712,7 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="framer-jz1m6w" data-framer-name="copyright 2025 @Proofmoor All Right Reserved" style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;--extracted-r6o4lv:var(--token-7bc77d28-260e-4b84-92a3-3084b520b0ce, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none" data-framer-component-type="RichTextContainer">
+<div class="framer-jz1m6w" data-framer-name="copyright 2025 @Proofmoor All Right Reserved" style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;margin-bottom:40px;--extracted-r6o4lv:var(--token-7bc77d28-260e-4b84-92a3-3084b520b0ce, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none" data-framer-component-type="RichTextContainer">
                                         <p class="framer-text framer-styles-preset-1ftma7d" data-styles-preset="tjQcKJwyy" style="--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-7bc77d28-260e-4b84-92a3-3084b520b0ce, rgb(255, 255, 255)))">copyright 2025 @Proofmoor All Right Reserved</p>
                                     </div>
                                 </div>
@@ -12594,7 +12598,8 @@
       <div id="cta-subheading">Secure your online identity with our expert verification &amp; recovery services.</div>
       
       <div id="cta-note">For consultation and inquiry</div>
-    <div id="footer-copyright">copyright 2025 @proofmoor All Right Reserved</div>
+    
+    <div id="footer-copyright" style="margin-bottom: 40px; margin-top: -20px; display: block; text-align: center;">copyright 2025 @proofmoor All Right Reserved</div>
     </div>
 
     
@@ -12830,7 +12835,15 @@
               document.querySelectorAll('p').forEach(el => {
                 const txt = (el.textContent || '').trim().toLowerCase();
                 if (txt.includes('copyright')) {
+                  // Override any existing copyright text with the configured one.
                   el.textContent = copyrightText;
+                  // Give the copyright line some breathing room and pull it up slightly
+                  // so it doesn't sit flush against the bottom of the page. This
+                  // adjustment only applies to paragraphs containing the word
+                  // "copyright".
+                  // Match the CSS adjustments: a modest upward shift and bottom margin.
+                  el.style.marginBottom = '25px';
+                  el.style.transform = 'translateY(-10px)';
                 }
               });
             }
@@ -12958,8 +12971,7 @@
                 
                 
 
-
-                'font-size: clamp(32px, 12vw, 160px); ' +
+                'font-size: clamp(32px, 8vw, 160px); ' +
                 'font-weight: 700; ' +
                 'display: block; ' +
                 'color: transparent; ' +
